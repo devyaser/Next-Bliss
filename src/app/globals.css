@@ -1,0 +1,90 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Oswald:wght@600;700&family=Roboto&display=swap");
+
+body {
+  background-color: #141313;
+}
+
+.LandingBanner-container {
+  background-image: url("../../public/bg5.png");
+}
+
+.options-wrapper {
+  @apply absolute right-[-7px] mt-1 w-[158px] origin-top-right rounded-md shadow-lg ring-black ring-opacity-5 focus:outline-none z-20 max-h-[400px] overflow-y-auto opacity-0;
+  &.dropdown-open {
+    @apply transition;
+    animation: fadeIn 100ms ease-out forwards;
+  }
+  &.dropdown-close {
+    @apply transition;
+    animation: fadeOut 75ms ease-in forwards;
+  }
+  .options-container {
+    @apply py-1;
+    & > * {
+      @apply block hover:bg-gray w-full text-left;
+    }
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    transform: scale(100%);
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    transform: scale(95%);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    transform: scale(95%);
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    transform: scale(100%);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+
+.infoboxtag {
+  transition: transform 0.3s ease-in-out; /* Adjust the duration and easing as needed */
+}
+
+.infoboxtag:hover {
+  transform: translateX(5px) translateY(10px); /* Adjust the translation values as needed */
+}
+
+
+@media (max-width: 768px) {
+  .box-0 {
+    width: 352px;
+  }
+}
+
+@media (max-width: 640px) {
+  .box-0 {
+    width: 252px;
+  }
+}
+
+
+.my-swiper .swiper-button-prev {
+  color: #D02D16;
+}
+.my-swiper .swiper-button-next {
+  color: #D02D16;
+}
+
+.my-swiper .swiper-pagination-bullet-active{
+  background-color: #D02D16;
+}
